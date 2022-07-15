@@ -1,0 +1,84 @@
+<rule>
+    <description>Example on how to transform XML to XDS</description>
+    <comment xml:space="preserve">This has not been tested, but should work. License: https://creativecommons.org/licenses/by-sa/4.0/
+    </comment>
+    <conditions>
+        <and/>
+    </conditions>
+    <actions>
+        <do-set-local-variable name="jsonString" scope="policy">
+            <arg-string>
+                <token-xpath expression="$current-op/driver-operation-data/response/value/text()"/>
+            </arg-string>
+        </do-set-local-variable>
+        <do-set-local-variable name="jsonString" scope="policy">
+            <arg-string>
+                <token-replace-all regex="(\&amp;)" replace-with="&amp;amp;">
+                    <token-text xml:space="preserve">$jsonString$</token-text>
+                </token-replace-all>
+            </arg-string>
+        </do-set-local-variable>
+        <do-set-local-variable name="lvXML" scope="policy">
+            <arg-node-set>
+                <token-xml-parse>
+                    <token-xpath expression="es:json2xml($jsonString)"/>
+                </token-xml-parse>
+            </arg-node-set>
+        </do-set-local-variable>
+        <do-for-each>
+            <arg-node-set>
+                <token-xpath expression="$lvXML//user"/>
+            </arg-node-set>
+            <arg-actions>
+                <do-append-xml-element expression=".." name="instance"/>
+                <do-set-xml-attr expression="../instance[last()]" name="class-name">
+                    <arg-string>
+                        <token-xpath expression="name($current-node)"/>
+                    </arg-string>
+                </do-set-xml-attr>
+                <do-set-xml-attr expression="../instance[last()]" name="event-id">
+                    <arg-string>
+                        <token-text xml:space="preserve">0</token-text>
+                    </arg-string>
+                </do-set-xml-attr>
+                <do-set-xml-attr expression="../instance[last()]" name="src-dn">
+                    <arg-string>
+                        <token-xpath expression="$current-node/email/text()"/>
+                    </arg-string>
+                </do-set-xml-attr>
+                <do-append-xml-element expression="../instance[last()]" name="association"/>
+                <do-append-xml-text expression="../instance[last()]/association">
+                    <arg-string>
+                        <token-xpath expression="$current-node/id/text()"/>
+                    </arg-string>
+                </do-append-xml-text>
+                <do-for-each>
+                    <arg-node-set>
+                        <token-xpath expression="$current-node/*"/>
+                    </arg-node-set>
+                    <arg-actions>
+                        <do-set-local-variable name="lvAttrName" scope="policy">
+                            <arg-string>
+                                <token-xpath expression="name($current-node)"/>
+                            </arg-string>
+                        </do-set-local-variable>
+                        <do-set-local-variable name="lvAttrValue" scope="policy">
+                            <arg-string>
+                                <token-text xml:space="preserve">$current-node$</token-text>
+                            </arg-string>
+                        </do-set-local-variable>
+                        <do-set-local-variable name="lvAttr" scope="policy">
+                            <arg-node-set>
+                                <token-xml-parse>
+                                    <token-xpath expression="es:createXMLAttr($lvAttrName, $lvAttrValue)"/>
+                                </token-xml-parse>
+                            </arg-node-set>
+                        </do-set-local-variable>
+                        <do-clone-xpath dest-expression="../instance[last()]" src-expression="$lvAttr"/>
+                    </arg-actions>
+                </do-for-each>
+                <do-clone-xpath dest-expression="../instance" src-expression="$current-op//operation-data"/>
+            </arg-actions>
+        </do-for-each>
+    </actions>
+</rule>

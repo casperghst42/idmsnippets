@@ -91,8 +91,10 @@ Basically what you need to do is to loop through the ```<user>``` to get all the
 
 Meta code:
 ```
-for each(lvXML/*) // remember we start at root
-    for each($current-node/*) // we want each attribute
+for each(lvXML//users)
+    create new instance with src-dn
+
+    for each($current-node/*) // we want each attribute (unless if we don't)
         attrname = name()
         attrvalue = $current-node
         add-element attr in instance

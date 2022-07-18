@@ -2,7 +2,7 @@
 
 The NetIQ Rest Driver will return a status document which contains (in most cases) JSON, unfortunately NetIQ only have included a very specfic json2xds converter which only works with very few rest-end-points.
 
-On the forums there have been some discussion on how to deal with this with many different solutions, this one is the one which I found which works the best for me - and it is simple (kiss).
+On the forums there have been some discussion on how to deal with this with many different solutions, this is what I found to work for me, and it is easy to deal with (kiss).
 
 ## json2xml.js 
 

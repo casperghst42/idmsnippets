@@ -27,7 +27,7 @@
         </do-set-local-variable>
         <do-for-each>
             <arg-node-set>
-                <token-xpath expression="$lvXML//user"/>
+                <token-xpath expression="$lvXML//users"/>
             </arg-node-set>
             <arg-actions>
                 <do-append-xml-element expression=".." name="instance"/>

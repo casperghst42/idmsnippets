@@ -33,7 +33,7 @@ Example data in the status/return from the REST Driver:
             "givenname": "Jens",
             "surname": "Lyn",
             "email": "jens.lyn@acme.com",
-            "departmenet": "Super Heros"
+            "departmenet": "Super Heroes"
         }
     ]
 }
@@ -84,7 +84,7 @@ The output will be something like:
         <givenname>Jens</givenname>
         <surname>Lyn</surname>
         <email>jens.lyn@acme.com</email>
-        <departmenet>Super Heros</departmenet>
+        <departmenet>Super Heroes</departmenet>
     </users>
 </root>
 ```
@@ -194,7 +194,7 @@ My code looks like (for the above example), which create instance nodes for each
         <value>jens.lyn@acme.com</value>
       </attr>
       <attr attr-name="departmenet">
-        <value>Super Heros</value>
+        <value>Super Heroes</value>
       </attr>
     </instance>
   </input>

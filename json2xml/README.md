@@ -4,17 +4,17 @@ The NetIQ Rest Driver will return a status document which contains (in most case
 
 On the forums there have been some discussion on how to deal with this with many different solutions, this one is the one which I found which works the best for me - and it is simple (kiss).
 
-##json2xml.js 
+## json2xml.js 
 
-###json2xml(jsonString, indent)
+### json2xml(jsonString, indent)
 * Converting a JSON String (object & array) to a XML document
 Wrapper around __json2xml(jsonObject, indent)
 
-###__json2xml(jsonObject, indent)
+### __json2xml(jsonObject, indent)
 * Convertin a JSON Object to an XML document
 
 
-##Invocation
+## Invocation
 Create an local variable which holds the json data:
 
 Example data in the status/return from the REST Driver:
@@ -85,7 +85,7 @@ The output will be something like:
 Now you got an XML structure which you can transform into XDS, this is where the fun starts, as this part of the code is individual to the data received from the REST end-point.
 
 
-##XML2XDS
+## XML2XDS
 
 Basically what you need to do is to loop through the ```<user>``` to get all the attributes (of which you have interest) and create instances for each ```<user>``` node. 
 
@@ -149,7 +149,7 @@ My code looks like (for the above example), which create instance nodes for each
 ![for-each-loop](for-each-loop.png)
 
 
-#End result
+# Result (instances)
 
 ```xml
 <input>

@@ -72,13 +72,20 @@ Transform the JSON to XML:
 The output will be something like:
 ```
 <root>
-    <user>
+    <users>
         <commonName>joedoe</commonName>
         <givenname>Joe</givenname>
         <surname>Doe</surname>
         <email>joe.doe@acme.com</email>
         <departmenet>Firecrackers</departmenet>
-    </user>
+    </users>
+    <users>
+        <commonName>jenslyn</commonName>
+        <givenname>Jens</givenname>
+        <surname>Lyn</surname>
+        <email>jens.lyn@acme.com</email>
+        <departmenet>Super Heros</departmenet>
+    </users>
 </root>
 ```
 

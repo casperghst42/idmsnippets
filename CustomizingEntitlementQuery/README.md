@@ -45,12 +45,11 @@ This will work just fine.
 
 ## Why modify the query
 
-Once in a while it can be handy to able to modify the query result, but as we do not know that the query is from an code-map refresh we cannot intercept the query.
+But once in a while it can be handy to be able to modify the query result, but as we do not know the specific query, and the specfic query result (status/instance) we cannot rewrite the result - as we can't intercept it.
 
-Adding something like this to the query, will allow us to identitfy where the query originates:
-```xml
-<operation-data code-map-refresh="true" entitlement-name="Groups"/>
-```
+Adding operation-data to the query result would be the best and easiest solution, and as the DTD do allow for this adding this: ```<operation-data code-map-refresh="true" entitlement-name="Groups"/>``` would help.
+
+That would result in a query-xml like this:
 
 Full query:
 ```xml

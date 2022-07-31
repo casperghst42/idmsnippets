@@ -11,7 +11,7 @@ On the forums there have been some discussion on how to deal with this with many
 Wrapper around __json2xml(jsonObject, indent)
 
 ### __json2xml(jsonObject, indent)
-* Convertin a JSON Object to an XML document
+* Converting a JSON Object to an XML document
 
 
 ## Invocation

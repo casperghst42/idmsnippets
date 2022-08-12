@@ -26,7 +26,7 @@ function addAttrValue(jsonString, attrName, attrValue) {
             var parentName = attrName.split('.')[0]
             var childName = attrName.split('.')[1]
 
-             var childObject = JSON.parse("{}")
+            var childObject = JSON.parse("{}")
             if (jsonObject.hasOwnProperty(parentName)) {                
                 childObject = jsonObject[parentName]                
             } 

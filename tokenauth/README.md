@@ -1,5 +1,7 @@
 # Token based Authentication with SOAP driver
 
+### Introduction 
+
 The IDM Soap Driver was designed to use Basic Authentication (remember it is old, like really old) and there have been no updates to it - in that area.
 
 Once in a while we run into SOAP end-points which require a token (OAuth2) *) for operation authentication, which can cause a few gray hairs.
@@ -24,7 +26,7 @@ So..
 - Create the policy in the Subscriber EVT to handle the authentication part.
 - Add code to the SoapIfy Stylesheet to construct the authentication header.
 
-a. GCVs (example)
+### a. GCVs (example)
 ``` xml
 <definition display-name="* My Soft Authentication Id" name="drv.sf.soap.username" type="string">
 	<description/>
@@ -40,6 +42,34 @@ a. GCVs (example)
 </definition>
 ```
 
-b. Startup Policy
+### b. Startup Policy
+
+Do something like this (example):
+```xml
+<rule>
+	<description>Startup - create driver variables</description>
+	<comment xml:space="preserve">Set the variables for the auth token.</comment>
+	<conditions/>
+	<actions>
+		<do-set-local-variable name="serverUrl" scope="driver">
+			<arg-string/>
+		</do-set-local-variable>
+		<do-set-local-variable name="sessionSecondsValid" scope="driver">
+			<arg-string>
+				<token-text xml:space="preserve">0</token-text>
+			</arg-string>
+		</do-set-local-variable>
+		<do-set-local-variable name="token" scope="driver">
+			<arg-string>
+				<token-text xml:space="preserve">0</token-text>
+			</arg-string>
+		</do-set-local-variable>
+	</actions>
+</rule>
+```
+You might not need all of this, you might need more - you have to see what your endpoint requires.
+
+### c. the authentication
+
 
 (work in progress)

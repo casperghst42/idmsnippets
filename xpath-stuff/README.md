@@ -8,6 +8,17 @@ XPath is one of these things you'll either endup hating or loving, but there is 
 
 This is just a collection of things I've done, it can be done smarter and prettier (no doubt about that), but it is a place to start - and a place for me to look when I forgot how to do something. 
 
+## Pages
+
+Resources I use and have used in the past.
+
+ by Alex McHugh
+ - [XPath Examples](https://community.microfocus.com/cyberres/netiq-identity-governance-administration/idm/w/identity_mgr_tips/16495/xpath-examples)
+
+ by Geoffrey Carman 
+ - [Using XPATH to Get the Position of a Node in a Node Set](https://community.microfocus.com/cyberres/netiq-identity-governance-administration/idm/w/identity_mgr_tips/3801/using-xpath-to-get-the-position-of-a-node-in-a-node-set)
+
+
 ## Evaluators
 
 I've been using the xPath Evaluator in [Eclipse EE](https://www.eclipse.org/) for years, it works and it gives you 4 taps to work with. I normally just create a file with the nodeset I want to work with, then start writing in the xpath field (you might have to open the view: Window -> Show View -> Other -> XML -> XPath).

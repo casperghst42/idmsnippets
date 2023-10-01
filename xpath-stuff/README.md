@@ -111,7 +111,7 @@ a. First get the associations from the user.
 b. Then check for the association.<br/>
 Remember the format of the Association value: &lt;volume>#&lt;nameSpace>#&lt;path>, we are intersted in the volume and nameSpace. So if the driverdn (volume) is there and the nameSpace is equal 1, then bingo, found.
 
-Example value (from: )
+Example value (from: [Microfocus Community](https://community.microfocus.com/cyberres/netiq-identity-governance-administration/idm/w/identity_mgr_tips/3321/using-xpath-to-examine-association-values))
 ```xml
 <nds dtdversion="3.5" ndsversion="8.x">
 	<source>

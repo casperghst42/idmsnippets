@@ -8,4 +8,5 @@ Everything is released under https://creativecommons.org/licenses/by-sa/4.0/
 - (work in progress) **tokenauth** is about how I go around using token authenticsation with the SOAP driver.
 - **xds2json** is about how I go around converting XDS to JSON for the REST Shim to consume.
 - **HandleParallelProcesses** is about how to deal with csv files having more than one entry per object.
+- **XPath Stuff** is some of the more interesting xpath expressions I've run across (for me at least).
 

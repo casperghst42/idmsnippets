@@ -182,7 +182,7 @@ This rule will set the qualified-src-dn if it does not exist.
 	<actions>
 		<do-set-xml-attr expression="$current-op" name="qualified-src-dn">
 			<arg-string>
-				<token-xpath expression="query:readObject($srcQueryProcessor,'',$current-op/@src-dn,'','CN')[1]/@qualified-src-dn"/>
+				<token-xpath expression="query:readObject($srcQueryProcessor,'',$current-op/@src-dn,'','CN')[1]/@qualified-src-dn/>
 			</arg-string>
 		</do-set-xml-attr>
 	</actions>

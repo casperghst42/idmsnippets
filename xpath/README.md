@@ -8,17 +8,6 @@ XPath is one of these things you'll either endup hating or loving, but there is 
 
 This is just a collection of things I've done, it can be done smarter and prettier (no doubt about that), but it is a place to start - and a place for me to look when I forgot how to do something. 
 
-## Pages
-
-Resources I use and have used in the past.
-
- by Alex McHugh
- - [XPath Examples](https://community.microfocus.com/cyberres/netiq-identity-governance-administration/idm/w/identity_mgr_tips/16495/xpath-examples)
-
- by Geoffrey Carman 
- - [Using XPATH to Get the Position of a Node in a Node Set](https://community.microfocus.com/cyberres/netiq-identity-governance-administration/idm/w/identity_mgr_tips/3801/using-xpath-to-get-the-position-of-a-node-in-a-node-set)
-
-
 ## Evaluators
 
 I've been using the xPath Evaluator in [Eclipse EE](https://www.eclipse.org/) for years, it works and it gives you 4 taps to work with. I normally just create a file with the nodeset I want to work with, then start writing in the xpath field (you might have to open the view: Window -> Show View -> Other -> XML -> XPath).
@@ -176,3 +165,36 @@ We got the driverDN (otherwise use other means to obtain it), then we just need 
 Could be done nicer, but it works.
 
 Cavelet: if the value is higher than 1, then this will not work and you need to figure that one out. 
+
+
+### Get the qualified-dn of an object
+By default the dn provided in an operation is a non-qualified (myorg\myou\myobject), where it can useful to have the qualified form (o=myorg\ou=myou\cn=myobject) for some operations (like convert to ldap).
+
+This rule will set the qualified-src-dn if it does not exist.
+```xml
+<rule>
+	<description>Get Qualified DN for Object</description>
+	<conditions>
+		<and>
+			<if-xml-attr name="qualified-src-dn" op="not-available"/>
+		</and>
+	</conditions>
+	<actions>
+		<do-set-xml-attr expression="$current-op" name="qualified-src-dn">
+			<arg-string>
+				<token-xpath expression="query:readObject($srcQueryProcessor,'',$current-op/@src-dn,'','CN')[1]/@qualified-src-dn"/>
+			</arg-string>
+		</do-set-xml-attr>
+	</actions>
+</rule>
+```
+
+Do remember to add the XML nameSpace for query: 
+```xml
+xmlns:query="http://www.novell.com/nxsl/java/com.novell.nds.dirxml.driver.XdsQueryProcessor"
+```
+
+![namespace-query](namespace-query.png)
+
+(use the predefined -> query)
+

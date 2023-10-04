@@ -10,3 +10,4 @@ Everything is released under https://creativecommons.org/licenses/by-sa/4.0/
 - **HandleParallelProcesses** is about how to deal with csv files having more than one entry per object.
 - **XPath Stuff** is some of the more interesting xpath expressions I've run across (for me at least).
 
+A small collection of pages which has helped me over the years: [Links](Links.md)

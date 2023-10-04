@@ -188,6 +188,13 @@ This rule will set the qualified-src-dn if it does not exist.
 	</actions>
 </rule>
 ```
+This is the xPath expression:
+```xml
+query:readObject($srcQueryProcessor,'',$current-op/@src-dn,'','CN')[1]/@qualified-src-dn
+```
+It will use readObject to call the srcQueryProcessor to get the CN from the @src-dn (current operation), and from the result it will get the attribute:quarlifed-src-dn. 
+
+
 
 Do remember to add the XML nameSpace for query: 
 ```xml

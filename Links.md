@@ -10,3 +10,11 @@ Resources I use and have used in the past.
 
 by Jim Willeke (now hosted by  Services.cisus.com)
 - [LDAP Wiki](https://ldapwiki.com/wiki/)
+
+by Lothar Haeger)
+- [github](https://github.com/lhaeger)
+- [brummelhook](https://www.brummelhook.com/)
+
+by Norbert Klassen (Consulting)
+- [github](https://github.com/klasen)
+

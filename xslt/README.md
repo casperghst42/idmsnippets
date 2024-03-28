@@ -52,3 +52,21 @@ The main work is done with this, which replaces "namespace:node-name" with "node
 </xsl:template>
 ```
 
+
+
+### Serialize Current Operation
+File: [serialize-currentop.xslt](serialize-currentop.xslt)<br/>
+Someone asked if it was possible to write the current operation to a file, which ofcause is possible. But first you need to serialize the operation. You can do it using dirxml-script (for-each..), using xslt is (in my eyes) easier.<br/>
+I took 'serializeNodeToString' from [Stackoverflow](https://stackoverflow.com/questions/6696382/xslt-how-to-convert-xml-node-to-string), solution provided by [Ilya Kharlamov](https://stackoverflow.com/users/805325/ilya-kharlamov)
+
+
+1) ```<xsl:template match="input">``` to act on the input node only
+2) set a vairable equal to the output from serializeNodeToString
+```xml
+<xsl:variable name="xmlstring">
+	<xsl:call-template name="serializeNodeToString">
+		<xsl:with-param name="node" select="soapenv:Envelope" />
+	</xsl:call-template>
+</xsl:variable>		
+```
+3) write the xmlstring (serialized nodeset) to a file (not part of the exercise, and google can help with that)

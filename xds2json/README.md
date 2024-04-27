@@ -185,7 +185,19 @@ You can add more checks and handling of integers (which could be handy), but in 
 
 Converted XDS:
 ```json
-{ "user" : {"username":"joedoe","firstname":"Joe","lastname":"Doe","user_fields":{"department":"Fun and Games","costcenter":"Unlimited"},"email":"joe.doe@adme.com"} }
+{ 
+    "user" : 
+    { 
+        "username":"joedoe",
+        "firstname":"Joe",
+        "lastname":"Doe",
+        "user_fields":{
+            "department":"Fun and Games",
+            "costcenter":"Unlimited"
+        },
+        "email":"joe.doe@adme.com"
+    }
+}
 ```
 
 Now you just have to add it to the input value node ... 

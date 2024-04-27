@@ -10,5 +10,6 @@ Everything is released under https://creativecommons.org/licenses/by-sa/4.0/
 - **HandleParallelProcesses** is about how to deal with csv files having more than one entry per object.
 - **XPath Stuff** is some of the more interesting xpath expressions I've run across (for me at least).
 - **XSLT** I for one is not a master of xslt, but it can be fun and challanging to write something in xslt.
+- **GCVs** Not everything is documented, one or two examples of what I use.
 
 A small collection of pages which has helped me over the years: [Links](Links.md)

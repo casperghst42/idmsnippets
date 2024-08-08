@@ -14,14 +14,10 @@
 			</node1>
 		</xsl:variable>
 
-		<xsl:variable name="stringWriter"
-			select="stringwriter:new()" />
-		<xsl:variable name="domWriter"
-			select="domwriter:new(exsl:node-set($mynode-set), $stringWriter)" />
-		<xsl:variable name="temp"
-			select="domwriter:write($domWriter)" />
-		<xsl:variable name="serialized"
-			select="stringwriter:toString($stringWriter)" />
+		<xsl:variable name="stringWriter" select="stringwriter:new()" />
+		<xsl:variable name="domWriter"    select="domwriter:new(exsl:node-set($mynode-set), $stringWriter)" />
+		<xsl:variable name="temp"         select="domwriter:write($domWriter)" />
+		<xsl:variable name="serialized"   select="stringwriter:toString($stringWriter)" />
 		<xsl:value-of select="$serialized" />
 	</xsl:template>	
 

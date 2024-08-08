@@ -55,7 +55,7 @@ The main work is done with this, which replaces "namespace:node-name" with "node
 
 
 ### Serialize Current Operation
-File: [serialize-currentop.xslt](serialize-currentop.xslt)<br/>
+File: [serialize-currentop.xslt](serialize-current-op.xslt)<br/>
 Someone asked if it was possible to write the current operation to a file, which ofcause is possible. But first you need to serialize the operation. You can do it using dirxml-script (for-each..), using xslt is (in my eyes) easier.<br/>
 I took 'serializeNodeToString' from [Stackoverflow](https://stackoverflow.com/questions/6696382/xslt-how-to-convert-xml-node-to-string), solution provided by [Ilya Kharlamov](https://stackoverflow.com/users/805325/ilya-kharlamov)
 

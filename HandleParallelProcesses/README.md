@@ -1,12 +1,14 @@
 # Handle Parallel Processes in a Driver
-Some years ago I was discussing an issue with a customer which made me think.
+Some years ago I was discussing an issue with a customer, which made me think.
 
-The situation was that the customer had a system where they would receive updates from the authorozied system in an csv file, which is qhite normal. The csv file could have multiple updates to the same identity in it, and there could be +10000 lines in the file.
+The situation was that the customer had a system, where they would receive updates from the authorozied system in an csv file, this is quite normal. This csv file could have multiple updates for the same identity. In a csv file with +10000 updates this can become a serious problem.
+
+Imagine you have one change which will trigger a move, then later another update will trigger another move, and so forth. The only interesting thing is the last move, and we should do everyting to limit the number of move. 
 
 ## Problem at Hand
-The customer was using Storage Manager to move user data between servers and between sites. 
+The customer was using Storage Manager, to move user data between servers and between sites. 
 
-As the authrozied source would managed by an administrator (just go along with that), and that administrator sometimes made mistakes it could happen that the administrator would move a number of identites from SiteA to SiteB and then discover it was an error and then change it to SiteZ. The system running the authorized source would gather that in multiple events and next time the system was pulled for updates it would send all these changes across. Causing Storage Manager to send data from SiteA to SiteB and then to SiteZ - causing more than a few problems.
+As the authrozied source would managed by an administrator (just go along with that) and as administrators sometimes made mistakes, it could cause a move a number of identites from SiteA to SiteB and then discover it was an error and then change it to SiteZ. The system running the authorized source would gather that in multiple events and next time the system was pulled for updates it would send all these changes across. Causing Storage Manager to send data from SiteA to SiteB and then to SiteZ - causing more than a few problems.
 
 I discussed the situation with a collauge (Dimi, Consulting NL) who came suggested to find a way to block all other drivers from touching the identities until the import was done.
 

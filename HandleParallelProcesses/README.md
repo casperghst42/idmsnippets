@@ -152,4 +152,4 @@ Something like this should work:
 ```
 
 ### Summary
-As far as I know, this problem can only be seen with the Delmited Text Driver, meaning it's the only driver which can have multiple updates for the same object, which makes sense.
+As far as I know, this problem is only seen with the Delmited Text Driver, meaning it's the only driver which can have multiple updates for the same object, which makes sense.

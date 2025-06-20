@@ -87,4 +87,4 @@ Then in the Subscriber Event Transformation add a policy (ACME-sub-etb-Calculate
 
 
 
-With this, the code will add the current operation to a disjoint set (0...10) and it will speed up the processing up.
+With this, the code will add the current operation to a disjoint set (0...10) and processing will be faster. But it will not do aything for your groups, this is users only. 

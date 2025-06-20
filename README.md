@@ -2,7 +2,10 @@
 
 Everything is released under https://creativecommons.org/licenses/by-sa/4.0/
 
+## As always use on you own peril, no support provided, there are no guaranties for this to work in your environment or that it will not cause any problems. 
+
 ## Content
+- **dirxml-script** small things which I sometimes forget howto do. 
 - **Customizing Entitlement Query** is about how to cusotmize the entitlement query to make it possible to intercept it.
 - **json2xml** is about how I go around converting the JSON from the REST Shim to xml and xds.
 - (work in progress) **tokenauth** is about how I go around using token authenticsation with the SOAP driver.

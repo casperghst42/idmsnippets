@@ -29,12 +29,12 @@ Let's say that we have a REST end-point which takes the following JSON to create
 
 And using the following schema mapping:
 
-cn ==> username
-givenname ==> firstname
-surname ==> lastname
-internet email address ==> email
-department ==> user_fields.department
-costcenter ==> user_fields.costcenter
+cn ==> username<br/>
+givenname ==> firstname<br/>
+surname ==> lastname<br/>
+internet email address ==> email<br/>
+department ==> user_fields.department<br/>
+costcenter ==> user_fields.costcenter<br/>
 
 ##The transformation
 The input document would look like:

@@ -166,7 +166,7 @@ Could be done nicer, but it works.
 
 Cavelet: if the value is higher than 1, then this will not work and you need to figure that one out. 
 
-### Localize Value node in a structured attribute (will also apply to the above:Does User have an active association)
+### Locate value node in a structured attribute (will also apply to the above:Does User have an active association)
 
 Take this query resutl for ACL's on a Driver. You want to verify if the second value node exist or not.
 

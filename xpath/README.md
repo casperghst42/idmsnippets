@@ -166,6 +166,34 @@ Could be done nicer, but it works.
 
 Cavelet: if the value is higher than 1, then this will not work and you need to figure that one out. 
 
+### Localize Value node in a structured attribute (will also apply to the above:Does User have an active association)
+
+Take this query resutl for ACL's on a Driver. You want to verify if the second value node exist or not.
+
+```xml
+<instance class-name="DirXML-Driver" qualified-src-dn="O=system\CN=driverset1\CN=Driver" src-dn="\TREE\system\driverset1\Driver" src-entry-id="33533">
+	<attr attr-name="ACL">
+	<value timestamp="1779198305#11" type="structured">
+		<component name="protectedName">DirXML-AccessSubmitCommand</component>
+		<component name="trustee">\TREE\system\driverset1\Driver\TestJob2</component>
+		<component name="privileges">4</component>
+	</value>
+	<value timestamp="1779198305#14" type="structured">
+		<component name="protectedName">DirXML-AccessConfigure</component>
+		<component name="trustee">\TREE\system\driverset1\Driver\TestJob2</component>
+		<component name="privileges">2</component>
+	</value>
+	</attr>
+</instance>
+```
+
+Possible xpath:<br/>
+```
+$lvQueryResult//*[component[@name="protectedName"]/text()="DirXML-AccessConfigure" and component[@name="privileges"]/text()="4" and component[@name="trustee"]/text()="\TREE\system\driverset1\Driver\TestJob2"]
+```
+
+This will return the second value node from the above query result. 
+
 
 ### Get the qualified-dn of an object
 By default the dn provided in an operation is a non-qualified (myorg\myou\myobject), where it can useful to have the qualified form (o=myorg\ou=myou\cn=myobject) for some operations (like convert to ldap).
